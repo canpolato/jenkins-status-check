@@ -3,10 +3,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('CR Validation Check') {
             steps {
                 script {
-                    echo 'Hello World'
+                    echo 'CR Validation Check'
                     if (env.CHANGE_ID) { // otherwise the object is not defined
                         if (pullRequest.title = 'ValidCR') {
                             echo 'CR id valid'
