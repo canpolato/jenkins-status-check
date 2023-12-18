@@ -6,8 +6,9 @@ pipeline {
         stage('CR Validation Check') {
             steps {
                 script {
-                    echo 'CR Validation Check'
+                    echo 'CR Validation Check' 
                     if (env.CHANGE_ID) { // otherwise the object is not defined
+                        echo pullRequest
                         if (pullRequest.title == 'ValidCR') {
                             echo 'CR id valid'
                         } else {
