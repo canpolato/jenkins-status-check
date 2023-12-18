@@ -8,7 +8,6 @@ pipeline {
                 script {
                     echo 'CR Validation Check' 
                     if (env.CHANGE_ID) { // otherwise the object is not defined
-                        // echo pullRequest
                         if (pullRequest.title == 'ValidCR') {
                             echo 'CR id valid'
                         } else {
